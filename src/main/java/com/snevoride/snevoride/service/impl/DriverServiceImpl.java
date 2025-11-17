@@ -25,4 +25,9 @@ public class DriverServiceImpl implements DriverService {
 
         driverRepository.save(driver);
     }
+
+    @Override
+    public void registerDriver(Driver driver) {
+
+    }
 }

@@ -11,4 +11,12 @@ public class DriverLocationDTO {
     public Long getDriverId() {
         return 0L;
     }
+
+    public Object getLatitude() {
+        return null;
+    }
+
+    public Object getLongitude() {
+        return null;
+    }
 }
