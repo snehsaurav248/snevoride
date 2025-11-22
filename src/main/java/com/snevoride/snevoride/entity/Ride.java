@@ -10,19 +10,19 @@ public class Ride {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long rideId;
+    private Long id;
 
-    private Long passengerId;
+    private Long userId;
     private Long driverId;
 
-    private Double sourceLat;
-    private Double sourceLong;
+    private Double pickupLat;
+    private Double pickupLng;
 
-    private Double destLat;
-    private Double destLong;
+    private Double dropLat;
+    private Double dropLng;
 
-    private Double distance;
     private Double fare;
 
-    private String status; // REQUESTED, ACCEPTED, STARTED, COMPLETED
+    @Enumerated(EnumType.STRING)
+    private RideStatus status;
 }
