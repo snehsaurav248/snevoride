@@ -1,4 +1,4 @@
-package com.snevoride.snevoride.entity;
+package com.snevoride.snevoride.entity.enums;
 
 public enum RideStatus {
     REQUESTED,

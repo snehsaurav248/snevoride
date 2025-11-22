@@ -1,6 +1,7 @@
 package com.snevoride.snevoride.service.impl;
 
 import com.snevoride.snevoride.entity.*;
+import com.snevoride.snevoride.entity.enums.RideStatus;
 import com.snevoride.snevoride.exception.NoDriverAvailableException;
 import com.snevoride.snevoride.exception.RideNotFoundException;
 import com.snevoride.snevoride.repository.DriverRepository;

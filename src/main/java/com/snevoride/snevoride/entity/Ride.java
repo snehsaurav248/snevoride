@@ -1,5 +1,6 @@
 package com.snevoride.snevoride.entity;
 
+import com.snevoride.snevoride.entity.enums.RideStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -25,4 +26,7 @@ public class Ride {
 
     @Enumerated(EnumType.STRING)
     private RideStatus status;
+
+    public void setPaid(boolean b) {
+    }
 }

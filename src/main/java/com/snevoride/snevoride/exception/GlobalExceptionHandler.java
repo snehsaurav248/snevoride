@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    // Handle ride not found gracefully
+    // Ride not found
     @ExceptionHandler(RideNotFoundException.class)
     public ResponseEntity<?> handleRideNotFound(RideNotFoundException ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -19,7 +19,18 @@ public class GlobalExceptionHandler {
                 ));
     }
 
-    // Default fallback for all other unexpected errors
+    // ⭐ Add this new block for Fare Calculation errors
+    @ExceptionHandler(FareCalculationException.class)
+    public ResponseEntity<?> handleFareCalculationError(FareCalculationException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(new ErrorResponse(
+                        400,
+                        ex.getMessage(),
+                        "Fare calculation failed"
+                ));
+    }
+
+    // Fallback for any other errors
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> handleGeneralException(Exception ex) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
